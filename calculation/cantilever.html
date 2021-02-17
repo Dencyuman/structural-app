@@ -1,0 +1,701 @@
+<html lang="ja" dir="ltr">
+<!--langは表示言語,dirは表示方向"ltr"は"left to right"-->
+
+<head>
+    <meta charset="utf-8">
+    <title>構造計算マスター【開発版】</title>
+    <link rel="stylesheet" href="calculation_stylesheet.css">
+    <link rel="stylesheet" href="calculation_responsive_stylesheet.css">
+    <script src="https://kit.fontawesome.com/dba8a61e5b.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html"><img src="../img/logo.png" alt="構造計算マスター" class="header_logo big_logo"></a>
+            <a href="../index.html"><img src="../img/small_logo.png" alt="構造計算マスター Mobile"
+                    class="header_logo small_logo"></a>
+
+            <div class="btn-wrapper">
+                <a href="https://twitter.com/Dencyudayo" class="btn bigbtn Twitter">
+                    <span class="fab fa-twitter"> Twitter</span>
+                </a>
+                <a href=https://github.com/Dencyuman class="btn bigbtn Github">
+                    <span class="fab fa-github"> Github</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="pageline">
+        <p><a href="../index.html"><span class="page">ホーム</span></a>
+            >
+            <a href="../index.html"><span class="page">構造計算機</span></a>
+            >
+            <a href="#"><span class="page">片持ち梁</span></a></p>
+    </div>
+
+    <div class="wrapper">
+        <h1>片持ち梁</h1>
+        <div class="content">
+            <p>「<span class="underline">片持ち梁</span>」に載荷された時の構造計算をします。</p>
+            <p><span class="underline ul0">こちらのページは現在作成中のため、使用できません。</span></p>
+        </div>
+
+        <h1>1.梁情報入力</h1>
+        <div class="content">
+            <div class="Introduction"><img class="IntroductionImg" src="../img/Simple/SimpleLength.jpg" alt="梁の長さの例"></div>
+            <p>梁の長さを入力してください</p>
+            <input type="tel" id="length" placeholder="10" maxlength="6" required>
+            <p class="unit">m</p>
+            <div class="clear"></div>
+            <p class="error">※数値を入力してください。</p>
+            <p>それぞれの荷重の数を選択してください</p>
+            <!--集中荷重の数-->
+            <p class="heading"><span class="underline ul1">集中荷重</span>の数</p>
+            <select name="PointNum" id="PointNum">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <div class="clear"></div>
+
+            <!--等分布荷重の数-->
+            <p class="heading"><span class="underline ul2">等分布荷重</span>の数</p>
+            <select name="EqualNum" id="EqualNum">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <div class="clear"></div>
+
+            <!--三角形分布荷重の数-->
+            <p class="heading"><span class="underline ul3">三角形分布荷重</span>の数</p>
+            <select name="TriangleNum" id="TriangleNum">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <div class="clear"></div>
+
+            <!--モーメントの数-->
+            <p class="heading"><span class="underline ul4">モーメント</span>の数</p>
+            <select name="MomentNum" id="MomentNum">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <div class="clear"></div>
+
+            <!--送信ボタン-->
+            <p class="JsBtn">送信</p>
+
+
+
+        </div>
+
+
+        <h1>2.荷重情報入力</h1>
+        <div class="content">
+            <h2>※入力する上での注意事項</h2>
+            <ul>
+                <li>等変分布荷重は等分布荷重と三角形分布荷重に分解の上、それぞれ入力してください。</li>
+                <li>位置の入力は、必ず梁の<span class="underline ul0">左端</span>からの距離を入力してください。</li>
+            </ul>
+            <h2>・集中荷重</h2>
+            <div class="Introduction"><img class="IntroductionImg" src="../img/Simple/SimplePoint.jpg" alt="集中荷重の例"></div>
+                <div class="menus Point">
+                    <div class="menu Point1">
+                        <div class="card">
+                            <h3 class="PointName">集中荷重1</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="PointMagnitude1" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="PointPosition1" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="PointDirection1" id="PointDirection1">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Point2">
+                        <div class="card">
+                            <h3 class="PointName">集中荷重2</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="PointMagnitude2" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="PointPosition2" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="PointDirection2" id="PointDirection2">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Point3">
+                        <div class="card">
+                            <h3 class="PointName">集中荷重3</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="PointMagnitude3" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="PointPosition3" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="PointDirection3" id="PointDirection3">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Point4">
+                        <div class="card">
+                            <h3 class="PointName">集中荷重4</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="PointMagnitude4" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="PointPosition4" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="PointDirection4" id="PointDirection4">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Point5">
+                        <div class="card">
+                            <h3 class="PointName">集中荷重5</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="PointMagnitude5" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="PointPosition5" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="PointDirection5" id="PointDirection5">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Point6">
+                        <div class="card">
+                            <h3 class="PointName">集中荷重6</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="PointMagnitude6" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="PointPosition6" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="PointDirection6" id="PointDirection6">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Point7">
+                        <div class="card">
+                            <h3 class="PointName">集中荷重7</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="PointMagnitude7" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="PointPosition7" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="PointDirection7" id="PointDirection7">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Point8">
+                        <div class="card">
+                            <h3 class="PointName">集中荷重8</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="PointMagnitude8" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="PointPosition8" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="PointDirection8" id="PointDirection8">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Point9">
+                        <div class="card">
+                            <h3 class="PointName">集中荷重9</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="PointMagnitude9" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="PointPosition9" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="PointDirection9" id="PointDirection9">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Point10">
+                        <div class="card">
+                            <h3 class="PointName">集中荷重10</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="PointMagnitude10" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="PointPosition10" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="PointDirection10" id="PointDirection10">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            <h2>・等分布荷重</h2>
+            <div class="Introduction"><img class="IntroductionImg" src="../img/Simple/SimpleEqual.jpg" alt="等分布荷重の例"></div>
+                <div class="menus Equal">
+                    <div class="menu Equal1">
+                        <div class="card">
+                            <h3 class="EqualName">等分布荷重1</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="EqualMagnitude1" placeholder="##" maxlength="6" >
+                            <p class="unit">kN/m</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="EqualPosition1" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">距離</p>
+                            <input type="tel" id="EqualDistance" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="EqualDirection1" id="EqualDirection1">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Equal2">
+                        <div class="card">
+                            <h3 class="EqualName">等分布荷重2</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="EqualMagnitude2" placeholder="##" maxlength="6" >
+                            <p class="unit">kN/m</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="EqualPosition2" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">距離</p>
+                            <input type="tel" id="EqualDistance2" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="EqualDirection2" id="EqualDirection2">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Equal3">
+                        <div class="card">
+                            <h3 class="EqualName">等分布荷重3</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="EqualMagnitude3" placeholder="##" maxlength="6" >
+                            <p class="unit">kN/m</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="EqualPosition3" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">距離</p>
+                            <input type="tel" id="EqualDistance3" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="EqualDirection3" id="EqualDirection3">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Equal4">
+                        <div class="card">
+                            <h3 class="EqualName">等分布荷重4</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="EqualMagnitude4" placeholder="##" maxlength="6" >
+                            <p class="unit">kN/m</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="EqualPosition4" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">距離</p>
+                            <input type="tel" id="EqualDistance4" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="EqualDirection4" id="EqualDirection4">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Equal5">
+                        <div class="card">
+                            <h3 class="EqualName">等分布荷重5</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="EqualMagnitude5" placeholder="##" maxlength="6" >
+                            <p class="unit">kN/m</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="EqualPosition5" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">距離</p>
+                            <input type="tel" id="EqualDistance5" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="EqualDirection5" id="EqualDirection5">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            <h2>・三角形分布荷重</h2>
+            <div class="Introduction"><img class="IntroductionImg" src="../img/Simple/SimpleTriangle.jpg" alt="三角形分布荷重の例"></div>
+                <div class="menus Triangle">
+                    <div class="menu Triangle1">
+                        <div class="card">
+                            <h3 class="TriangleName">三角形分布荷重1</h3>
+                            <p class="item">傾き</p>
+                            <select name="TriangleInclination1" id="TriangleInclination1">
+                                <option value="RisingRight" selected>右上がり</option>
+                                <option value="RisingLeft">左上がり</option>
+                            </select>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="TriangleMagnitude1" placeholder="##" maxlength="6" >
+                            <p class="unit">kN/m</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="TrianglePosition1" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">距離</p>
+                            <input type="tel" id="TriangleDistance1" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="TriangleDirection1" id="TriangleDirection1">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Triangle2">
+                        <div class="card">
+                            <h3 class="TriangleName">三角形分布荷重2</h3>
+                            <p class="item">傾き</p>
+                            <select name="TriangleInclination2" id="TriangleInclination2">
+                                <option value="RisingRight" selected>右上がり</option>
+                                <option value="RisingLeft">左上がり</option>
+                            </select>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="TriangleMagnitude2" placeholder="##" maxlength="6" >
+                            <p class="unit">kN/m</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="TrianglePosition2" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">距離</p>
+                            <input type="tel" id="TriangleDistance2" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="TriangleDirection2" id="TriangleDirection2">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Triangle3">
+                        <div class="card">
+                            <h3 class="TriangleName">三角形分布荷重3</h3>
+                            <p class="item">傾き</p>
+                            <select name="TriangleInclination3" id="TriangleInclination3">
+                                <option value="RisingRight" selected>右上がり</option>
+                                <option value="RisingLeft">左上がり</option>
+                            </select>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="TriangleMagnitude3" placeholder="##" maxlength="6" >
+                            <p class="unit">kN/m</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="TrianglePosition3" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">距離</p>
+                            <input type="tel" id="TriangleDistance3" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="TriangleDirection3" id="TriangleDirection3">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Triangle4">
+                        <div class="card">
+                            <h3 class="TriangleName">三角形分布荷重4</h3>
+                            <p class="item">傾き</p>
+                            <select name="TriangleInclination4" id="TriangleInclination4">
+                                <option value="RisingRight" selected>右上がり</option>
+                                <option value="RisingLeft">左上がり</option>
+                            </select>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="TriangleMagnitude4" placeholder="##" maxlength="6" >
+                            <p class="unit">kN/m</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="TrianglePosition4" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">距離</p>
+                            <input type="tel" id="TriangleDistance4" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="TriangleDirection4" id="TriangleDirection4">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Triangle5">
+                        <div class="card">
+                            <h3 class="TriangleName">三角形分布荷重5</h3>
+                            <p class="item">傾き</p>
+                            <select name="TriangleInclination5" id="TriangleInclination5">
+                                <option value="RisingRight" selected>右上がり</option>
+                                <option value="RisingLeft">左上がり</option>
+                            </select>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="TriangleMagnitude5" placeholder="##" maxlength="6" >
+                            <p class="unit">kN/m</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="TrianglePosition5" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">距離</p>
+                            <input type="tel" id="TriangleDistance5" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="TriangleDirection5" id="TriangleDirection5">
+                                <option value="Upward">上向き</option>
+                                <option value="Downward" selected>下向き</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            <h2>・モーメント</h2>
+            <div class="Introduction"><img class="IntroductionImg" src="../img/Simple/SimpleMoment.jpg" alt="モーメントの例"></div>
+                <div class="menus Moment">
+                    <div class="menu Moment1">
+                        <div class="card">
+                            <h3 class="MomentName">曲げモーメント1</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="MomentMagnitude1" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="MomentPosition1" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="MomentDirection1" id="MomentDirection1">
+                                <option value="TurnRight" selected>右回り(時計回り)</option>
+                                <option value="TurnLeft">左回り(反時計回り)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Moment2">
+                        <div class="card">
+                            <h3 class="MomentName">曲げモーメント2</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="MomentMagnitude2" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="MomentPosition2" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="MomentDirection2" id="MomentDirection2">
+                                <option value="TurnRight" selected>右回り(時計回り)</option>
+                                <option value="TurnLeft">左回り(反時計回り)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Moment3">
+                        <div class="card">
+                            <h3 class="MomentName">曲げモーメント3</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="MomentMagnitude3" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="MomentPosition3" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="MomentDirection3" id="MomentDirection3">
+                                <option value="TurnRight" selected>右回り(時計回り)</option>
+                                <option value="TurnLeft">左回り(反時計回り)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Moment4">
+                        <div class="card">
+                            <h3 class="MomentName">曲げモーメント4</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="MomentMagnitude4" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="MomentPosition4" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="MomentDirection4" id="MomentDirection4">
+                                <option value="TurnRight" selected>右回り(時計回り)</option>
+                                <option value="TurnLeft">左回り(反時計回り)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="menu Moment5">
+                        <div class="card">
+                            <h3 class="MomentName">曲げモーメント5</h3>
+                            <p class="item">大きさ</p>
+                            <input type="tel" id="MomentMagnitude5" placeholder="##" maxlength="6" >
+                            <p class="unit">kN</p>
+                            <div class="clear"></div>
+                            <p class="item">位置</p>
+                            <input type="tel" id="MomentPosition5" placeholder="##" maxlength="6" >
+                            <p class="unit">m</p>
+                            <div class="clear"></div>
+                            <p class="item">方向</p>
+                            <select name="MomentDirection5" id="MomentDirection5">
+                                <option value="TurnRight" selected>右回り(時計回り)</option>
+                                <option value="TurnLeft">左回り(反時計回り)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            <h2>全ての入力が終わったら</h2>
+        </div>
+        <h1>3.計算結果</h1>
+        <div class="content">
+            <canvas id="" width="320px" height="620px"></canvas>
+        </div>
+    
+        <script src="../BeforeCalculate.js"></script>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <a href="../index.html"><img src="../img/logo.png" alt="構造計算マスター" class="footer_logo big_logo" /></a>
+            <a href="../index.html"><img src="../img/small_logo.png" alt="構造計算マスター Mobile"
+                    class="footer_logo small_logo" /></a>
+        </div>
+    </footer>
+</body>
+
+</html>

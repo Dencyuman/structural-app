@@ -1,0 +1,100 @@
+/*ブレイクポイントは960px(タブレット向け)と560px(スマホ向け)*/
+/*スマホ向け下限は360px*/
+
+/*タブレット向けデザイン*/
+@media screen and (max-width:959px) {
+
+  .header_logo{
+    width: 230px;
+    margin-top: 22px;
+  }
+
+  .footer_logo{
+    width:200px;
+  }
+
+  .menu{
+    width:50%;
+  }
+
+  .card{
+    max-width: 190px;
+    width:90%;
+  }
+
+  .Introduction{
+  text-align:center;
+ }
+}
+
+/*スマホ向けデザイン*/
+@media screen and (max-width:559px) {
+
+  .container{
+    padding: 0 10px;
+  }
+
+  h1{
+    font-size: 18px;
+  }
+
+  h2{
+    font-size: 16px;
+  }
+
+  p{
+    font-size: 14px;
+  }
+
+  .pageline p{
+  font-size: 16px;
+  padding:10px 0;
+  }
+
+  .page{
+  padding:10px 5px;
+  }
+
+  .bigbtn{
+  display: none;
+  }
+
+  .big_logo{
+    display: none;
+  }
+
+  .small_logo{
+    display: block;
+  }
+
+  .header_logo{
+    margin-top: 12px;
+  }
+
+  .menu{
+    width:100%;
+  }
+
+  .card{
+    min-width: 190px;
+    width:80%;
+  }
+
+  .IntroductionImg{
+    width: 250px;
+  }
+
+  .content{
+    margin:0 0 20px 10px;
+  }
+
+  select{
+  width:70px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 50px;
+  }
+
+}

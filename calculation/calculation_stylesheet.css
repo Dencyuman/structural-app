@@ -1,0 +1,329 @@
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  background-color: #d6d6d6;}
+
+ul{
+  margin:10px 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1700px;
+  margin:0 auto;
+  padding:0 30px;
+  width:100%
+}
+
+.clear{
+  clear: left;
+}
+
+header {
+  height:80px;
+  background-color: #333333;
+}
+
+.header_logo {
+  float:left;
+  width:300px;
+  margin-top: 15px;
+}
+
+.small_logo{
+  display: none;
+  width:170px;
+}
+
+.btn{
+  display: inline-block;
+  color:#fff;
+  padding:8px 15px;
+  transition-duration: 0.5s;
+  border-radius: 4px;
+}
+
+.Twitter{
+  margin-right: 10px;
+  background: #1da1f2;
+}
+
+.Github{
+  margin-right: 10px;
+  background:#4b4444 ;
+}
+
+.btn-wrapper{
+  float:right;
+  margin-top:23px;
+}
+
+h1{
+  font-size: 24px;
+  border-bottom: 3px solid #4a8f4a;
+  border-left: 5px solid #4a8f4a;
+  margin:10px 0 10px 0;
+  padding-left: 20px;
+}
+
+h2{
+  font-size: 20px;
+  border-bottom: 2px solid #4a8f4a;
+  margin:20px 0;
+  padding-left: 20px;
+}
+
+p{
+  margin:5px 0;
+}
+
+.pageline{
+    margin-left: 30px;
+}
+
+.pageline p{
+  display: inline-block;
+  color: black;
+  font-size: 18px;
+  padding: 5px 0;
+  border-radius: 4px;
+  margin:10px 0;
+  background: linear-gradient(145deg, #e5e5e5, #c1c1c1);
+  box-shadow: 7px 7px 7px #b6b6b6,-7px -7px 7px #f6f6f6;
+}
+
+.pageline a{
+  color:black;
+}
+
+.page{
+  padding:5px 10px;
+  border-radius: 4px;
+}
+
+.page:hover{
+  transition: all 0.5s;
+  background-color: #8fbc8f;
+}
+
+footer{
+  height:80px;
+  background-color:#123b12;
+}
+
+.footer_logo{
+  width:250px;
+  float:left;
+  margin:20px 0;
+}
+
+footer p{
+  margin:15px 0;
+  font-size:17px;
+  color:#696969;
+  float:right;
+}
+
+.Introduction{
+  text-align:left;
+  max-width: 1200px;
+}
+
+.IntroductionImg{
+  width: 450px;
+  border:4px solid #4a8f4a;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+
+.info{
+  margin-top: 20px;
+}
+
+.height_space{
+    padding:10px;
+}
+
+.wrapper{
+    margin:20px;
+}
+
+
+
+canvas{
+  background-color: #fff;
+  border:5px solid #4a8f4a;
+  border-radius: 5px;
+}
+
+.underline{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ul0{
+  background: linear-gradient(transparent 50%,#fbff059c 50%);
+}
+
+.ul1{
+  background: linear-gradient(transparent 70%,#22ff059c 30%);
+}
+
+.ul2{
+  background: linear-gradient(transparent 70%,#19c5039c 30%);
+}
+
+.ul3{
+  background: linear-gradient(transparent 70%,#128f029c 30%);
+}
+
+.ul4{
+  background: linear-gradient(transparent 70%,#0b5a019c 30%);
+}
+
+
+input{
+  width: 100px;
+  height:30px;
+  float: left;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.content{
+  margin:0 0 20px 30px;
+}
+
+.unit{
+  display: inline-block;
+  font-size: 18px;
+  padding-top: 3px;
+  margin: 0;
+}
+
+.MomentUnit{
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+select{
+  width:100px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+.heading{
+  margin-right: 10px;
+  float: left;
+}
+
+.JsBtn{
+  display: inline-block;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px 20px;
+  border-radius: 4px;
+  color: #fff;
+  background: #333333;
+  margin:10px 10px 0 0;
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+}
+
+.JsBtn p{
+  margin-top: 2px;
+}
+
+.Next1{
+  display: none;
+}
+
+.FirstReset{
+  display: none;
+}
+
+.FinishBtn{
+  display: inline-block;
+  margin-top: 0;
+}
+
+.card{
+  width:190px;
+  border-radius: 8px;
+  background: #d6d6d6;
+  box-shadow: inset 5px 5px 10px #b6b6b6, inset -5px -5px 10px #f6f6f6;
+  text-align: center;
+  display: inline-block;
+  flex: auto;
+  margin:20px 30px;
+  padding: 10px 20px 20px 20px;
+  color:black;
+  transition-duration: 0.5s;
+  display: none;
+}
+
+.menus{
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.menu{
+  text-align: center;
+  width:25%;
+}
+
+.item{
+  display: block;
+  text-align: left;
+  margin:0;
+}
+
+.PointName{
+  background: linear-gradient(transparent 60%,#22ff059c 40%);
+  display: inline;
+}
+.EqualName{
+  background: linear-gradient(transparent 60%,#19c5039c 40%);
+  display: inline;
+}
+
+.TriangleName{
+  background: linear-gradient(transparent 60%,#128f029c 40%);
+  display: inline;
+}
+
+.MomentName{
+  background: linear-gradient(transparent 60%,#0b5a019c 40%);
+  display: inline;
+}
+
+.error{
+  color: red;
+  font-size: 13px;
+  display: none;
+}
+
+.FormCheck{
+  display: none;
+}

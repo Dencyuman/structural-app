@@ -1,0 +1,111 @@
+/*ブレイクポイントは960px(タブレット向け)と560px(スマホ向け)*/
+/*スマホ向け下限は360px*/
+
+/*タブレット向けデザイン*/
+@media screen and (max-width:960px) {
+
+  .bigbtn{
+    display: none;
+  }
+
+  .header_logo{
+    width: 230px;
+    margin-top: 22px;
+  }
+
+  .footer_logo{
+    width:200px;
+  }
+
+  .menu{
+    width:100%;
+  }
+
+  .card{
+    max-width: 500px;
+    width:90%;
+    height:200px;
+  }
+
+  .card img{
+    width:100px;
+    float: left;
+    margin-left: 10px;
+  }
+
+  .card p{
+    text-align: center;
+  }
+}
+
+/*スマホ向けデザイン*/
+@media screen and (max-width:559px) {
+
+  .container{
+    padding: 0 10px;
+  }
+
+  .smallbtn-wrapper{
+    text-align: center;
+  }
+
+  h1{
+    font-size: 18px;
+  }
+
+  h2{
+    font-size: 16px;
+  }
+
+  p{
+    font-size: 14px;
+  }
+
+  .big_logo{
+    display: none;
+  }
+
+  .small_logo{
+    display: block;
+  }
+
+  .header_logo{
+    margin-top: 12px;
+  }
+
+  .menu{
+    width:100%;
+  }
+
+  .bigbtn{
+    display: none;
+  }
+
+  .card{
+    min-width: 190px;
+    width:80%;
+    height:auto;
+    padding-top: 0;
+  } 
+
+  .card p{
+    font-size: 14px;
+    padding: 0;
+  }
+
+  .card h2{
+    font-size: 15px;
+  }
+
+  .card img{
+    margin-left: 0;
+    float: none;
+    width: 100px;
+  }
+
+footer{
+  height:90px;
+}
+
+
+}
